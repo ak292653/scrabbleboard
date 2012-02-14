@@ -1,0 +1,27 @@
+Plansza do uogólnionego Scrabble:
+
+1. Mamy dane:
+	- interfejs słownika,
+	- interfejs "oceniacza literek" - klasy która w zależności np. od języka gry przypisuje
+	  literkom wartosci punktowe,
+
+2. najbardziej podstawowa(lecz niezbyt ciekawa) funkcjonalność (już zaimplementowana przy pomocy TDD):
+	- podział na literki aktywne w danym momencie i te już ustalone w poprzednich ruchach,
+	- stawianie literek aktywnych,
+	- usuwanie aktywnych literek,
+	- wykonywanie ruchu - to znaczy przeniesienie z aktywnych do ustalonych,
+	- ustawianie wartosci premii literowej na danym polu,
+	- ustawianie wartosci premii slownej na danym polu,
+	- metody umozliwiające zobaczenie literki i mnozników na danym polu.
+	
+3. Co właściwie zaimplementujemy w screencaście:
+	- sprawdzanie poprawności ruchu według reguł gry:
+		a) dolozone literki zawsze w jednym poziomie/pionie,
+		b) dolozone literki razem z tymi starymi tworzą spójny fragment,
+		c) pierwsze slowo przechodzi przez środek,
+		d) w nastepnych ruchach któraś literka "dotyka" jednej z poprzedino dostawionych,
+	- ocenianie punktowe
+		a) sumujemy punkty dla wszystkich nowo powstalych slow,
+		b) dla kazdego slowa uwzgledniamy premie - najpierw literowe, a na końcu słowne,
+		c) dodatkowe 50 punktów za wyłożenie wszystkich (w założeniu 7) liter,
+	- opcjonalnie (robi się to na żądanie przeciwnika) sprawdzanie słów względem słownika,
